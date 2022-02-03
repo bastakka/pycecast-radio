@@ -17,9 +17,10 @@ Python code I use to stream .mp3 files from specified directory to icecast using
 git clone https://github.com/bastakka/pycecast-radio.git && cd pycecast-radio
 ```
 
-- Install pip requiremenets (venv recommended)
+- Install apt & pip requiremenets (venv recommended)
 
 ```
+apt install libshout3-dev
 pip install -r requirements.txt
 ```
 
