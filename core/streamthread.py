@@ -81,7 +81,7 @@ class StreamThread(Thread):
         temp = open(audio_file, "rb")
         self.shout.set_metadata({"song": self.format_songname(audio_file)})
         new_buffer = temp.read(4096)
-        while len(new_buffer != 0):
+        while len(new_buffer) != 0:
             buffer = new_buffer
             new_buffer = temp.read(4096)
             self.shout.send(buffer)

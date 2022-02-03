@@ -2,7 +2,7 @@ import pretty_errors
 from colorama import Fore, init
 from core.config import get_config
 from core.logger import get_logger
-from core.thread import StreamThread
+from core.streamthread import StreamThread
 
 init(autoreset=True)
 pretty_errors.activate()
