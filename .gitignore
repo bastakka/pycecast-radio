@@ -131,6 +131,7 @@ dmypy.json
 
 # Config
 config/config.json
+resources/radio/conf/icecast.xml
 
 # Temporary files which are not tracked by git
 *.tmp
