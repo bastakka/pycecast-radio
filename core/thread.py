@@ -73,11 +73,12 @@ class StreamThread(Thread):
 
     def sendaudio(self, audio_file):
         self.logger.info("Playing file %s" % str(audio_file))
-        with open(audio_file, "rb") as temp:
-            self.shout.set_metadata({"song": self.format_songname(audio_file)})
+        temp = open(audio_file, "rb")
+        self.shout.set_metadata({"song": self.format_songname(audio_file)})
+        new_buffer = temp.read(4096)
+        while len(new_buffer != 0):
+            buffer = new_buffer
             new_buffer = temp.read(4096)
-            while len(new_buffer != 0):
-                buffer = new_buffer
-                new_buffer = temp.read(4096)
-                self.shout.send(buffer)
-                self.shout.sync()
+            self.shout.send(buffer)
+            self.shout.sync()
+        temp.close()
