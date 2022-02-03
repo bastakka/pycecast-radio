@@ -14,6 +14,7 @@ Python code I use to stream .mp3 files from specified directory to icecast using
 - Clone this repository preferebly to `/srv`
 
 ```
+cd /srv
 git clone https://github.com/bastakka/pycecast-radio.git && cd pycecast-radio
 ```
 
@@ -68,7 +69,7 @@ Edit file `resources/radio/conf/icecast-example.xml` to your liking and rename i
 
 ### pycecast
 
-Edit file `config/config-example.json` to your liking and rename it to `config.json`. Be sure to fill same values for hostname, port and password as in Icecast config, pycecast will use source password.
+Edit file `config/config-example.json` to your liking and rename it to `config.json`. Be sure to fill same values for hostname, port and password as in Icecast config, pycecast will use source password from icecast configuration.
 
 ## License
 
