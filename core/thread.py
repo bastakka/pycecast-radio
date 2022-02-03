@@ -43,7 +43,7 @@ class StreamThread(Thread):
         self.song_conter = 0
 
         self.shout.open()
-        super().__init__(self)
+        Thread.__init__(self)
 
     # checking directories for files to stream
     def scan_directories(self):
@@ -67,14 +67,14 @@ class StreamThread(Thread):
         """
         result = song.split("/")[-1].split(".")
         result = (
-            ".".join(result[: len(result) - 1]).replace("_", " ").replace("-", " - ")
+            ".".join(result[:len(result) - 1]).replace("_", " ").replace("-", " - ")
         )
         return result
 
     def sendaudio(self, audio_file):
         self.logger.info("Playing file %s" % str(audio_file))
         with open(audio_file, "rb") as temp:
-            self.shout.set_metadata({"song": self.format_songname(temp)})
+            self.shout.set_metadata({"song": self.format_songname(audio_file)})
             new_buffer = temp.read(4096)
             while len(new_buffer != 0):
                 buffer = new_buffer
