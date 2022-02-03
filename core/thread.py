@@ -1,3 +1,4 @@
+import sys
 import shout
 from threading import Thread
 from glob import glob
@@ -48,7 +49,11 @@ class StreamThread(Thread):
     # checking directories for files to stream
     def scan_directories(self):
         self.files_array = glob(self.music_directory + "/*.[mM][Pp]3")
-        self.logger.info("Found %i files", len(self.files_array))
+        if len(self.files_array) == 0:
+            self.logger.error("Found %i files. Exiting.", len(self.files_array))
+            sys.exit(1)
+        else:
+            self.logger.info("Found %i files", len(self.files_array))
         shuffle(self.files_array)  # randomize playlist
 
     def run(self):
