@@ -1,0 +1,14 @@
+[Unit]
+Description=Eurobeat radio streaming to icecast
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/srv/radio/venv/bin/python radio.py
+ExecReload=/bin/kill -HUP $MAINPID
+User=icecast
+Group=icecast
+WorkingDirectory=/srv/radio
+
+[Install]
+WantedBy=multi-user.target

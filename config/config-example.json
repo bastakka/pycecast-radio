@@ -1,0 +1,25 @@
+{
+  "radio": {
+    "hostname": "127.0.0.1",
+    "port": 9000,
+    "password": "password",
+    "streams": {
+      "KBBL": {
+        "mountpoint": "/KBBL",
+        "directory": "/var/www/radio/KBBL",
+        "station_url": "https://domain.example/KBBL",
+        "name": "KBBL",
+        "description": "Example radio station named KBBL",
+        "genre": "rock"
+      },
+      "KBBL2": {
+        "mountpoint": "/KBBL2",
+        "directory": "/var/www/radio/KBBL2",
+        "station_url": "https://domain.example/KBBL2",
+        "name": "KBBL2",
+        "description": "Example radio station named KBBL2",
+        "genre": "heavy metal"
+      }
+    }
+  }
+}
