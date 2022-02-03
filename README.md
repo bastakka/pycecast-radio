@@ -1,4 +1,5 @@
 # pycecast-radio
+
 Python code I use to stream .mp3 files from specified directory to icecast using [python-shout](https://github.com/yomguy/python-shout) library
 
 <p align="center">
@@ -11,22 +12,32 @@ Python code I use to stream .mp3 files from specified directory to icecast using
 ## Instalation
 
 - Clone this repository
+
 ```
-git clone https://github.com/bastakka/pycecast-radio.git && cd Coco-bot
+git clone https://github.com/bastakka/pycecast-radio.git && cd pycecast-radio
 ```
+
 - Install pip requiremenets (venv recommended)
+
 ```
 pip install -r requirements.txt
 ```
+
 - Run radio localy in terminal
+
 ```
 python3 radio.py
 ```
+
 or
-- Run radio as a systemd service (configurated to /srv/radio path with venv called venv)
+
+- Run radio as a systemd service (configurated to /srv/pycecast-radioradio path with venv called venv)
+
 ```
 sudo cp resources/radio.service /etc/systemd/system/
 sudo systemctl enable radio
 ```
+
 ## License
+
 This project is licensed under the GNU GPL v.3 License.

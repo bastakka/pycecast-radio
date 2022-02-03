@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/srv/radio/venv/bin/python radio.py
+ExecStart=/srv/pycecast-radio/venv/bin/python radio.py
 ExecReload=/bin/kill -HUP $MAINPID
 User=icecast
 Group=icecast
-WorkingDirectory=/srv/radio
+WorkingDirectory=/srv/pycecast-radio
 
 [Install]
 WantedBy=multi-user.target
