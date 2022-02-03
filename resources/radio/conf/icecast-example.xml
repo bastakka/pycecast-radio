@@ -2,8 +2,8 @@
     <!-- location and admin are two arbitrary strings that are e.g. visible
          on the server info page of the icecast web interface
          (server_version.xsl). -->
-    <location>Eurobeat radio</location>
-    <admin>bastakka@bastakka.eu</admin>
+    <location>Radio</location>
+    <admin>username@domain.example</admin>
 
     <limits>
         <clients>10</clients>
@@ -23,8 +23,8 @@
         <relay-password>hackme</relay-password>
 
         <!-- Admin logs in with the username given below -->
-        <admin-user>bastakka</admin-user>
-        <admin-password>BastKa147icecast1</admin-password>
+        <admin-user>username</admin-user>
+        <admin-password>password</admin-password>
     </authentication>
 
     <!-- Uncomment this if you want directory listings -->
@@ -32,7 +32,7 @@
         <yp-url-timeout>15</yp-url-timeout>
         <yp-url></yp-url>
     </directory>
-    <hostname>radio.bastakka.eu</hostname>
+    <hostname>radio.domain.example</hostname>
 
     <listen-socket>
         <port>5555</port>
