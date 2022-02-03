@@ -11,7 +11,7 @@ Python code I use to stream .mp3 files from specified directory to icecast using
 
 ## Instalation
 
-- Clone this repository
+- Clone this repository preferebly to `/srv`
 
 ```
 git clone https://github.com/bastakka/pycecast-radio.git && cd pycecast-radio
@@ -38,6 +38,37 @@ or
 sudo cp resources/radio.service /etc/systemd/system/
 sudo systemctl enable radio
 ```
+
+## Icecast instalation
+
+To install icecast follow [this](https://github.com/xiph/Icecast-Server#buildinstall). Included directory `resources/radio` is used by default for icecast, in order to run it either:
+
+- Run icecast localy in terminal
+
+```
+icecast -c /srv/pycecast-radio/resources/radio/conf/icecast.xml
+```
+
+or
+
+- Run icecast as a systemd service (configurated to /srv/pycecast-radioradio path) as well
+
+```
+sudo cp resources/icecast.service /etc/systemd/system/
+sudo systemctl enable icecast
+```
+
+## Configuration
+
+In order for both to work correctly you will need to make their configuration files. There are examples included.
+
+### Icecast
+
+Edit file `resources/radio/conf/icecast-example.xml` to your liking and rename it to `icecast.xml`. Set `hostname` depending on if you are gonna use some reverse proxy like nginx to either `127.0.0.1` or the real access IP address.
+
+### pycecast
+
+Edit file `config/config-example.json` to your liking and rename it to `config.json`. Be sure to fill same values for hostname, port and password as in Icecast config, pycecast will use source password.
 
 ## License
 
