@@ -46,7 +46,7 @@ To install icecast follow [this](https://www.atlantic.net/dedicated-server-hosti
 
 ## Configuration
 
-In order for pycecast to work correctly you will need to make its configuration file. There is an example included.
+In order for pycecast to work correctly you will need to make its configuration file inside `config` folder. There is an example included. Config has to be named `config.json`.
 
 ### pycecast
 
