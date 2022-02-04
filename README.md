@@ -28,7 +28,7 @@ pip install -r requirements.txt
 - Run radio localy in terminal
 
 ```
-python3 radio.py
+python3 /srv/pycecast-radio/radio.py
 ```
 
 or

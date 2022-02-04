@@ -1,7 +1,7 @@
 [Unit]
 Description = Python radio streaming to icecast
-Requires = icecast.service
-After = icecast.service
+Requires = icecast2.service
+After = icecast2.service
 
 [Service]
 Type = simple
