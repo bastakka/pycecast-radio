@@ -1,15 +1,15 @@
 [Unit]
-Description=Eurobeat radio streaming to icecast
+Description = Python radio streaming to icecast
 Requires = icecast.service
 After = icecast.service
 
 [Service]
-Type=simple
-ExecStart=/srv/pycecast-radio/venv/bin/python radio.py
-ExecReload=/bin/kill -HUP $MAINPID
-User=icecast2
-Group=icecast
-WorkingDirectory=/srv/pycecast-radio
+Type = simple
+ExecStart = /srv/pycecast-radio/venv/bin/python radio.py
+ExecReload = /bin/kill -HUP $MAINPID
+User = icecast2
+Group = icecast
+WorkingDirectory = /srv/pycecast-radio
 
 [Install]
-WantedBy=multi-user.target
+WantedBy = multi-user.target

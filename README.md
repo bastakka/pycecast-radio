@@ -42,30 +42,11 @@ sudo systemctl enable radio
 
 ## Icecast instalation
 
-To install icecast follow [this](https://github.com/xiph/Icecast-Server#buildinstall). Included directory `resources/radio` is used by default for icecast, in order to run it either:
-
-- Run icecast localy in terminal
-
-```
-icecast -c /srv/pycecast-radio/resources/radio/conf/icecast.xml
-```
-
-or
-
-- Run icecast as a systemd service (configurated to /srv/pycecast-radioradio path) as well.
-
-```
-sudo cp resources/icecast.service /etc/systemd/system/
-sudo systemctl enable icecast
-```
+To install icecast follow [this](https://www.atlantic.net/dedicated-server-hosting/how-to-install-icecast-audio-streaming-server-on-ubuntu-20-04/).
 
 ## Configuration
 
-In order for both to work correctly you will need to make their configuration files. There are examples included.
-
-### Icecast
-
-Edit file `resources/radio/conf/icecast-example.xml` to your liking and rename it to `icecast.xml`. Set `hostname` depending on if you are gonna use some reverse proxy like nginx to either `127.0.0.1` or the real access IP address.
+In order for pycecast to work correctly you will need to make its configuration file. There is an example included.
 
 ### pycecast
 
