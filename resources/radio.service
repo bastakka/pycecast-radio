@@ -1,6 +1,7 @@
 [Unit]
 Description=Eurobeat radio streaming to icecast
-After=network.target
+Requires = icecast.service
+After = icecast.service
 
 [Service]
 Type=simple

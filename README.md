@@ -33,7 +33,7 @@ python3 radio.py
 
 or
 
-- Run radio as a systemd service (configurated to /srv/pycecast-radioradio path with venv called venv)
+- Run radio as a systemd service. Service is configurated to /srv/pycecast-radioradio path with python venv called venv and to run after and with icecast service.
 
 ```
 sudo cp resources/radio.service /etc/systemd/system/
@@ -52,7 +52,7 @@ icecast -c /srv/pycecast-radio/resources/radio/conf/icecast.xml
 
 or
 
-- Run icecast as a systemd service (configurated to /srv/pycecast-radioradio path) as well
+- Run icecast as a systemd service (configurated to /srv/pycecast-radioradio path) as well.
 
 ```
 sudo cp resources/icecast.service /etc/systemd/system/
@@ -82,7 +82,7 @@ sudo useradd -m icecast -s /usr/sbin/nologin -g icecast
 You will have to then change ownership of icecast directory to this account with
 
 ```
-sudo chown -R icecast:icecast resources/radio
+sudo chown -R icecast:icecast /srv/pycecast-radio
 ```
 
 be sure that audio files used by python process are accessible from this account. You can make them accessible just for the icecast group.
