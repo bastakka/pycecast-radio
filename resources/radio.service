@@ -7,7 +7,7 @@ After = icecast.service
 Type=simple
 ExecStart=/srv/pycecast-radio/venv/bin/python radio.py
 ExecReload=/bin/kill -HUP $MAINPID
-User=icecast
+User=icecast2
 Group=icecast
 WorkingDirectory=/srv/pycecast-radio
 

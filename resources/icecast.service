@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 ExecStart=icecast -c /srv/pycecast-radio/resources/radio/conf/icecast.xml
 ExecReload=/bin/kill -HUP $MAINPID
-User=icecast
+User=icecast2
 Group=icecast
 WorkingDirectory=/home/icecast
 

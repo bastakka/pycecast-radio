@@ -71,22 +71,6 @@ Edit file `resources/radio/conf/icecast-example.xml` to your liking and rename i
 
 Edit file `config/config-example.json` to your liking and rename it to `config.json`. Be sure to fill same values for hostname, port and password as in Icecast config, pycecast will use source password from icecast configuration.
 
-### accounts
-
-Both service file use the account `icecast` for their work. It is recommended to make that account with for example following command
-
-```
-sudo useradd -m icecast -s /usr/sbin/nologin -g icecast
-```
-
-You will have to then change ownership of icecast directory to this account with
-
-```
-sudo chown -R icecast:icecast /srv/pycecast-radio
-```
-
-be sure that audio files used by python process are accessible from this account. You can make them accessible just for the icecast group.
-
 ## Read the docs
 
 * [Icecast](https://icecast.org/docs/)
