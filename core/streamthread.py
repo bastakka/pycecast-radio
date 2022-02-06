@@ -79,6 +79,7 @@ class StreamThread(Thread):
                             advert = random.choice(self.adverts)
                         self.sendaudio(advert)
                         sent.append(advert)
+                if len(self.info_spots) > 0:
                     self.sendaudio(random.choice(self.info_spots))
                 self.song_counter += 1
                     
