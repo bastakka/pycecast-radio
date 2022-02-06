@@ -80,8 +80,8 @@ class StreamThread(Thread):
                             advert = random.choice(self.adverts)
                         self.sendaudio(advert)
                         sent.append(advert)
-
-
+                    self.sendaudio(random.choice(self.info_spots))
+                    
     def format_songname(self, song):
         """
         Format song name from filename
