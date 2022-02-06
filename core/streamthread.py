@@ -69,7 +69,6 @@ class StreamThread(Thread):
             self.song_counter = 0
             for audio_file in self.files_array:
                 self.sendaudio(audio_file)
-                self.song_counter += 1
                 if len(self.info_spots) > 0:
                     self.sendaudio(random.choice(self.info_spots))
                 if len(self.adverts) > 2 and self.song_conter % 5 == 0:
@@ -81,6 +80,7 @@ class StreamThread(Thread):
                         self.sendaudio(advert)
                         sent.append(advert)
                     self.sendaudio(random.choice(self.info_spots))
+                self.song_counter += 1
                     
     def format_songname(self, song):
         """
