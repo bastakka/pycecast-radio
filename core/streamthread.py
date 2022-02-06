@@ -1,3 +1,4 @@
+import random
 import sys
 import shout
 from threading import Thread
@@ -50,11 +51,17 @@ class StreamThread(Thread):
     def scan_directories(self):
         self.files_array = glob(self.music_directory + "/*.[mM][Pp]3")
         if len(self.files_array) == 0:
-            self.logger.error("Found %i files. Exiting.", len(self.files_array))
+            self.logger.error("Found %i audio files. Exiting.", len(self.files_array))
             sys.exit(1)
         else:
-            self.logger.info("Found %i files", len(self.files_array))
+            self.logger.info("Found %i audio files", len(self.files_array))
         shuffle(self.files_array)  # randomize playlist
+
+        self.info_spots = glob(self.music_directory + "/spots/*.[mM][Pp]3")
+        self.logger.info("Found %i info spot files", len(self.info_spots))
+
+        self.adverts = glob(self.music_directory + "/adverts/*.[mM][Pp]3")
+        self.logger.info("Found %i advert files", len(self.adverts))
 
     def run(self):
         while True:  # infinity
@@ -63,6 +70,17 @@ class StreamThread(Thread):
             for audio_file in self.files_array:
                 self.sendaudio(audio_file)
                 self.song_counter += 1
+                if len(self.info_spots) > 0:
+                    self.sendaudio(random.choice(self.info_spots))
+                if len(self.adverts) > 2 and self.song_conter % 5 == 0:
+                    sent = []
+                    for i in range(0, 3):
+                        advert = random.choice(self.adverts)
+                        while advert in sent:
+                            advert = random.choice(self.adverts)
+                        self.sendaudio(advert)
+                        sent.append(advert)
+
 
     def format_songname(self, song):
         """
